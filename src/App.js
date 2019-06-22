@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+import InventoryList from './containers/InventoryListContainer'
 import './App.css';
 
 function App() {
   return (
     <div>
+      <InventoryList />
     </div>
   );
 }
