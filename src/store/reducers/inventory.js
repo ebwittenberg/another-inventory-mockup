@@ -23,6 +23,13 @@ export function inventoryReducer(state='', action) {
                 // create new inventory array
                 inventory: newInventoryArray
             }
+        case 'ADD_TODO_SUCCESS':
+            console.log('add todo success is being called')
+            console.log(action.payload)
+            return {
+                ...state,
+                todo: action.payload
+            }
         default:
             return state;
     }

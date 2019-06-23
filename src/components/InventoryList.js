@@ -2,20 +2,33 @@ import React from 'react'
 import { Item } from './Item'
 
 const InventoryList = (props) => {
-    const { inventory, incrementStock } = props
-    return (
-        <table>
-            <tbody>
-                <tr>
-                    <th>Name</th>
-                    <th>Stock</th>
-                </tr>
+    const { inventory, incrementStock, onShowTodo, todo } = props
+    console.log(todo.title)
 
-                {
-                    inventory.inventory.map(i => <Item increaseStock={incrementStock} item={i}/>)
-                }
-            </tbody>
-        </table>
+    const rowStyle= {
+        color: 'blue'
+    }
+    return (
+        <div>
+            <table>
+                <tbody>
+                    <tr style={rowStyle}>
+                        <th>Name</th>
+                        <th>Stock</th>
+                    </tr>
+
+                    {
+                        inventory.map(i => <Item increaseStock={incrementStock} item={i} key={i.id}/>)
+                    }
+                </tbody>
+            </table>
+            <button
+                onClick={onShowTodo}
+            >
+                Click Me
+            </button>
+            <h2>{todo.title}</h2>
+        </div>
     )
 }
 

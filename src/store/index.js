@@ -1,5 +1,6 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { inventoryReducer } from './reducers/inventory'
+import thunk from 'redux-thunk';
 
 const initialState = {
     inventory: [
@@ -38,7 +39,8 @@ const initialState = {
             cost: 54.99,
             warehouseID: 23
         }
-    ]
+    ],
+    todo: {}
 }
 
-export const store = createStore(inventoryReducer, initialState)
+export const store = createStore(inventoryReducer, initialState, applyMiddleware(thunk))
