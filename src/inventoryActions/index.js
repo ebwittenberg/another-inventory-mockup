@@ -7,9 +7,9 @@ export const incrementStock = (itemId) => {
     })
 }
 
-export const showTodo = () => {
+export const showTodo = (num) => {
     return async dispatch => {
-        const todoResponse = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+        const todoResponse = await axios.get(`https://jsonplaceholder.typicode.com/todos/${num}`)
         dispatch(addTodoSuccess(todoResponse.data))
 
     }

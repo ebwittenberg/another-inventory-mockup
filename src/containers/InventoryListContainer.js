@@ -14,8 +14,8 @@ const mapDispatchToProps = (dispatch) => {
         incrementStock: id => {
             dispatch(incrementStock(id))
         },
-        onShowTodo: () => {
-            dispatch(showTodo())
+        onShowTodo: (todoNum) => {
+            dispatch(showTodo(todoNum))
         }
     }
 }
